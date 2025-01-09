@@ -17,7 +17,6 @@ function Form(props) {
   function submitForm() {
     props.handleSubmit(person);
     setPerson({ name: "", job: "" });
-    <input type="button" value="Submit" onClick={submitForm} />
   }
 
   return (
@@ -38,7 +37,9 @@ function Form(props) {
         value={person.job}
         onChange={handleChange}
       />
+      <input type="button" value="Submit" onClick={submitForm} />
     </form>
   );
 }
+
 export default Form;
