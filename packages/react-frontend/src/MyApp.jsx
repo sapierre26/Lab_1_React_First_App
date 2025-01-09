@@ -15,6 +15,10 @@ function MyApp() {
     setCharacters(updated);
   }
 
+  function updateList(person) {
+    setCharacters([...characters, person]);
+  }
+
   return (
     <div className="container">
       <Table 
@@ -30,7 +34,7 @@ function MyApp() {
         characterData={characters}
         removeCharacter={removeOneCharacter}
       /> 
-      <Form />
+      <Form handleSubmit={updateList} />
     </div>
   );
 }

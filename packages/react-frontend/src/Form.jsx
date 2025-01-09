@@ -1,7 +1,7 @@
 // src/Form.jsx
 import React, { useState } from "react";
 
-function Form() {
+function Form(props) {
   const [person, setPerson] = useState({
     name: "",
     job: ""
@@ -12,6 +12,12 @@ function Form() {
     if (name === "job")
       setPerson({ name: person["name"], job: value });
     else setPerson({ name: value, job: person["job"] });
+  }
+
+  function submitForm() {
+    props.handleSubmit(person);
+    setPerson({ name: "", job: "" });
+    <input type="button" value="Submit" onClick={submitForm} />
   }
 
   return (
